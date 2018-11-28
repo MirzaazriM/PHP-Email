@@ -18,18 +18,20 @@ try {
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
     $mail->Username = 'oglecevacmirza@gmail.com';                 // SMTP username
     $mail->Password = 'dcqbsysyfysjgtau';                   // Password of the account from which emails are sended (in this case it is hashed)
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->SMTPSecure = 'tls';                             // Enable TLS encryption, `ssl` also accepted
+    $mail->SMTPAuth = TRUE;
     $mail->Port = 587;                                    // TCP port to connect to
 
-    //Recipients
+    // Recipients
     $mail->setFrom('oglecevacmirza@gmail.com', 'SmartLab');
-    $mail->addAddress('mirzaoglecevac@hotmail.com', 'Receiver');     // Add a recipient
+    $mail->addAddress('mirzao@smartlab.ba', 'Receiver');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Test message subject';
-    $mail->Body    = '<div style="width: 300px; height: 200px; padding: 10px; font-size: 20px; text-align: center; color: #fff; background-color: green;"> HTML message sent from mirzao@smartlab.ba </div>';
+    $mail->Body    =  file_get_contents("email_template.html");
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';  // if mail provider blocks HTML content set alternative body with no HTML
+    $mail->addAttachment("stadion.jpeg", "Stadion Image");
 
     $mail->send();
     echo 'Message has been sent';
