@@ -12,17 +12,17 @@ use PHPMailer\PHPMailer\Exception;
 $mail = new PHPMailer(true);
 try {
     //Server settings
-    //$mail->SMTPDebug = 2;                                 // Enable verbose debug output
+    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
     $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'mirzao@smartlab.ba';                 // SMTP username
-    $mail->Password = 'hqivmzmqjodlwahv';                   // Password of the account from which emails are sended (in this case it is hashed)
+    $mail->Username = 'oglecevacmirza@gmail.com';                 // SMTP username
+    $mail->Password = 'dcqbsysyfysjgtau';                   // Password of the account from which emails are sended (in this case it is hashed)
     $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
     $mail->Port = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('mirzao@smartlab.ba', 'SmartLab');
+    $mail->setFrom('oglecevacmirza@gmail.com', 'SmartLab');
     $mail->addAddress('mirzaoglecevac@hotmail.com', 'Receiver');     // Add a recipient
 
     //Content
