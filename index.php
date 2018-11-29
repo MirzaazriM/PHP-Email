@@ -14,16 +14,15 @@ try {
     //Server settings
     $mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+    $mail->Host = 'smtp-mail.outlook.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'oglecevacmirza@gmail.com';                 // SMTP username
-    $mail->Password = 'dcqbsysyfysjgtau';                   // Password of the account from which emails are sended (in this case it is hashed)
+    $mail->Username = 'mirzaoglecevac@hotmail.com';                 // SMTP username
+    $mail->Password = '';                   // Password of the account from which emails are sended (in this case it is hashed) dcqbsysyfysjgtau
     $mail->SMTPSecure = 'tls';                             // Enable TLS encryption, `ssl` also accepted
-    $mail->SMTPAuth = TRUE;
     $mail->Port = 587;                                    // TCP port to connect to
 
     // Recipients
-    $mail->setFrom('oglecevacmirza@gmail.com', 'SmartLab');
+    $mail->setFrom('mirzaoglecevac@hotmail.com', 'SmartLab');
     $mail->addAddress('mirzao@smartlab.ba', 'Receiver');     // Add a recipient
 
     //Content
