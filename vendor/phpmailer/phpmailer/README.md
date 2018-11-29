@@ -113,7 +113,7 @@ try {
     $mail->addBCC('bcc@example.com');
 
     //Attachments
-    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+    $mail->addAttachment('/var/tmp/file.tar.gz');         attachment_files
     $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 
     //Content

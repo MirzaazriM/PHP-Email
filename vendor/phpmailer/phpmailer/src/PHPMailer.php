@@ -605,7 +605,7 @@ class PHPMailer
     protected $ReplyToQueue = [];
 
     /**
-     * The array of attachments.
+     * The array of attachment_files.
      *
      * @var array
      */
@@ -2847,7 +2847,7 @@ class PHPMailer
     }
 
     /**
-     * Return the array of attachments.
+     * Return the array of attachment_files.
      *
      * @return array
      */
@@ -2857,7 +2857,7 @@ class PHPMailer
     }
 
     /**
-     * Attach all file, string, and binary attachments to the message.
+     * Attach all file, string, and binary attachment_files to the message.
      * Returns an empty string on failure.
      *
      * @param string $disposition_type
@@ -2872,7 +2872,7 @@ class PHPMailer
         $cidUniq = [];
         $incl = [];
 
-        // Add all attachments
+        // Add all attachment_files
         foreach ($this->attachment as $attachment) {
             // Check if it is a valid disposition_filter
             if ($attachment[6] == $disposition_type) {
@@ -3314,7 +3314,7 @@ class PHPMailer
     /**
      * Add an embedded (inline) attachment from a file.
      * This can include images, sounds, and just about any other document type.
-     * These differ from 'regular' attachments in that they are intended to be
+     * These differ from 'regular' attachment_files in that they are intended to be
      * displayed inline with the message, not just attached for download.
      * This is used in HTML messages that embed the images
      * the HTML refers to using the $cid value.
@@ -3541,7 +3541,7 @@ class PHPMailer
     }
 
     /**
-     * Clear all filesystem, string, and binary attachments.
+     * Clear all filesystem, string, and binary attachment_files.
      */
     public function clearAttachments()
     {
@@ -3730,7 +3730,7 @@ class PHPMailer
      * $basedir is prepended when handling relative URLs, e.g. <img src="/images/a.png"> and must not be empty
      * will look for an image file in $basedir/images/a.png and convert it to inline.
      * If you don't provide a $basedir, relative paths will be left untouched (and thus probably break in email)
-     * Converts data-uri images into embedded attachments.
+     * Converts data-uri images into embedded attachment_files.
      * If you don't want to apply these transformations to your HTML, just set Body and AltBody directly.
      *
      * @param string        $message  HTML message string
