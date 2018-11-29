@@ -5,25 +5,21 @@ require __DIR__ . "/vendor/autoload.php";
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// NOTE in order this code to work our email from which we sending emails must be set to allow access to less secure apps
-// follow this link to do that https://support.google.com/a/answer/6260879
-// 2 way verification must be enabled to use it (to get code to use inside PHP script)
-
 $mail = new PHPMailer(true);
 try {
     //Server settings
     //$mail->SMTPDebug = 2;                                 // Enable verbose debug output
     $mail->isSMTP();                                      // Set mailer to use SMTP
-    $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+    $mail->Host = 'smtp.bizmail.yahoo.com';                       // To send email over yahoo SMTP server we need to have business account
     $mail->SMTPAuth = true;                               // Enable SMTP authentication
-    $mail->Username = 'mirzao@smartlab.ba';                 // SMTP username
-    $mail->Password = 'hqivmzmqjodlwahv';                   // Password of the account from which emails are sended (in this case it is hashed)
-    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 587;                                    // TCP port to connect to
+    $mail->Username = 'mirzaoglecevac@yahoo.com';                 // SMTP username
+    $mail->Password = '';                   // Password of the account from which emails are sended
+    $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('mirzao@smartlab.ba', 'SmartLab');
-    $mail->addAddress('mirzaoglecevac@hotmail.com', 'Receiver');     // Add a recipient
+    $mail->setFrom('mirzaoglecevac@yahoo.com', 'SmartLab');
+    $mail->addAddress('mirzao@smartlab.ba', 'Receiver');     // Add a recipient
 
     //Content
     $mail->isHTML(true);                                  // Set email format to HTML
