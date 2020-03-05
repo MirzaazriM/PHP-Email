@@ -19,7 +19,7 @@
         <!--<property name="clean.done" value="true"/>-->
     <!--</target>-->
 
-    <!--<target name="composer" description="Install composer packages including require-dev.">-->
+    <target name="composer" description="Install composer packages including require-dev.">
         <!--<get src="https://getcomposer.org/download/1.2.1/composer.phar" dest="composer.phar"/>-->
         <!--<exec executable="php" failonerror="true">-->
             <!--<arg value="${basedir}/composer.phar"/>-->
@@ -27,7 +27,7 @@
             <!--<arg value="&#45;&#45;prefer-dist"/>-->
             <!--<arg value="&#45;&#45;no-progress"/>-->
         <!--</exec>-->
-    <!--</target>-->
+    </target>
 
     <!--<target name="full-build" depends="prepare,composer,static-analysis,phpunit,phpdox,-check-failure"-->
             <!--description="Perform static analysis, run tests, and generate project documentation.">-->
